@@ -13,8 +13,8 @@
     }
   </style>
 </head>
-<body>
-  <header>
+<body class="pt-32">
+  <header class="fixed top-0 left-0 w-full bg-white z-50">
     <div class="max-w-6xl mx-auto">
    <!-- Row 1: logo, search bar, add to cart button-->
     <div class="flex items-center justify-between py-4 border-b">
@@ -35,8 +35,8 @@
 </div>
 <div class="border-b">
     <nav class="max-w-6xl mx-auto flex gap-6 py-3">
-      <a href="#" class=" bg-black py-1.5 px-2 text-xs font-medium hover:bg-gray-900 rounded-md active:bg-black text-white">All Gifts</a>
-      <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Birthday</a>
+      <a href="index.html" class=" bg-black py-1.5 px-2 text-xs font-medium hover:bg-gray-900 rounded-md active:bg-black text-white">All Gifts</a>
+      <a href="birthday.html" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Birthday</a>
       <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Anniversary</a>
       <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Holiday</a>
       <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Personalized</a>
@@ -44,7 +44,7 @@
       <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Home & Decor</a>
     </nav>
   </div>
-  
+  </header>
   <section class="bg-gray-100">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-8 py-16">
       <div class="flex-1">
@@ -63,14 +63,311 @@
 
     <section class="max-w-6xl mx-auto px-8 py-9">
       <div class="flex items-center justify-between">
-        <h2 class="text-lg font-medium">All Gifts</h2>
-        <span class="text-sm text-gray-500">12 products</span>
+        <h2 class="text-lg font-medium mb-7">All Gifts</h2>
+        <span class="text-sm text-gray-500 mb-7">12 products</span>
       </div>
+      <!--row 1-->
+      <!--Card 1-->
       <div class="grid grid-cols-4 gap-6">
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/photo-frame.avif" alt="Personalized Photo Frame">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Personalized Photo Frame</p>
+            <p class="text-xs text-gray-500 mb-0.5">Beautiful wooden frame with custom engraving</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$29.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">personalized</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+        <!--Card 2-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/jewelry-box.avif" alt="Luxury Jewelry Box">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Luxury Jewelry Box</p>
+            <p class="text-xs text-gray-500 mb-0.5">Elegant velvet-lined jewelry organizer</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$89.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">jewelry</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 3-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/scented-candles (1).jpg" alt="Scented Candle Set">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Scented Candle Set</p>
+            <p class="text-xs text-gray-500 mb-0.5">Set of 3 premium aromatherapy candles</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$39.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">home</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 4-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/birthday-crown (2).jpg" alt="Birthday Crown" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Birthday Crown</p>
+            <p class="text-xs text-gray-500 mb-0.5">Sparkly birthday crown for special celebrations</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$19.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">birthday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--row 2-->
+<!--Card 1-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/anniversary-glass.jpg" alt="Anniversary Wine Glasses" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Anniversary Wine Glasses</p>
+            <p class="text-xs text-gray-500 mb-0.5">Engraved crystal wine glasses for couples</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$59.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">anniversary</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 2-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/holiday-ornament (1).jpg" alt="Holiday Ornament Set" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Holiday Ornament Set</p>
+            <p class="text-xs text-gray-500 mb-0.5">Beautiful handcrafted Christmas ornaments</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$24.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">holiday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 3-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/custom-name-necklace.avif" alt="Custom name Necklace" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Custom Name Necklace</p>
+            <p class="text-xs text-gray-500 mb-0.5">Gold-plated necklace with personalized name</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$79.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">jewelry</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 4-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/succulent-garden.avif" alt="Succulent Garden Kit" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Succulent Garden Kit</p>
+            <p class="text-xs text-gray-500 mb-0.5">Complete kit to grow your own succulent garden</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$34.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">home</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--row 3-->
+<!--Card 1-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/memory-book-album.avif" alt="Memory Book Album" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Memory Book Album</p>
+            <p class="text-xs text-gray-500 mb-0.5">Leather-bound photo album for precious memories</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$44.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">personalized</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 2-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/birthday-baloon-bouquet.avif" alt="Birthday Balloon Bouquet" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Birthday Balloon Bouquet</p>
+            <p class="text-xs text-gray-500 mb-0.5">Colorful helium balloon arrangement</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$16.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">birthday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 3-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/spa-set (1).jpg" alt="Couple's Spa Set" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Couple's Spa Set</p>
+            <p class="text-xs text-gray-500 mb-0.5">Luxurious spa kit for romantic evenings</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$69.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">anniversary</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+<!--Card 4-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/cookie-cutters.jpg" alt="Holiday Cookie Cutters" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Holiday Cookie Cutters</p>
+            <p class="text-xs text-gray-500 mb-0.5">Festive cookie cutter set with recipes</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$18.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">holiday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>      
+     </div>
+    </section>
+
+    <footer class="bg-gray-100 border-t">
+      <div class="max-w-6xl mx-auto px-8 py-9 grid grid-cols-4 gap-6">
+        <div>
+        <div class="flex items-center gap-2 mb-3 ">
+         <i data-lucide="gift" class="w-6 h-6"></i>
+         <span class="text-lg font-medium">GiftHub</span>
+         </div>
+        <p class="text-xs text-gray-500 mb-0.5">Your one-stop destination for thoughtful gifts that create lasting memories.</p>
+        </div>
+      
+        <div class="p-4">
+          <h3 class="font-medium text-sm mb-3">Quick Links</h3>
+          <p class="text-xs text-gray-500 mb-0.5">About UsGift GuideCustom OrdersTrack Order</p>
+        </div>
+
+        <div class="p-4">
+          <h3 class="font-medium text-sm mb-3">Customer Service</h3>
+          <p class="text-xs text-gray-500 mb-0.5">Shipping InfoReturns & ExchangesSize GuideFAQ</p>
+        </div>
+
+        <div class="p-4">
+          <h3 class="font-medium text-sm mb-3">Stay Updated</h3>
+          <p class="text-xs text-gray-500 mb-0.5">Get exclusive offers and gift ideas delivered to your inbox.</p>
+          <input type="email" placeholder="Email" class=" border-grey rounded-md bg-gray-100">
+        </div>
+      </div>
+      <div class="border-t">
+        <div class="max-w-6xl mx-auto px-8 py-9 flex justify-between items-center">
+          <div class="flex gap-7">
+          <p class="text-xs text-gray-500 mb-0.5">123 Gift Street, Present City</p>
+          <p class="text-xs text-gray-500 mb-0.5">(555) 123-GIFT</p>
+          <p class="text-xs text-gray-500 mb-0.5">hello@gifthub.com</p>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 mb-0.5">Made with ❤️ for gift lovers</p>
+          </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-8 py-9 text-center">
+          <p class="text-xs text-gray-500 mb-0.5">© 2025 GiftHub. All rights reserved.</p>         
+        </div>
 
       </div>
-    </section>
-  </header>
+     </footer>
   <script>
   lucide.createIcons();
 </script>

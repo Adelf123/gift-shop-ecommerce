@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GiftHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="pt-32">
+  <header class="fixed top-0 left-0 w-full bg-white z-50">
+    <div class="max-w-6xl mx-auto">
+   <!-- Row 1: logo, search bar, add to cart button-->
+    <div class="flex items-center justify-between py-4 border-b">
+      <!-- Logo -->
+        <div class="flex items-center gap-2">
+         <i data-lucide="gift" class="w-6 h-6"></i>
+         <span class="text-lg font-medium">GiftHub</span>
+        </div>
+        <!-- Search bar -->
+        <div class="flex-1 max-w-md mx-8 ">
+  <input type="text" placeholder="Search for gifts..." class="w-full px-4 py-2 border rounded-md bg-gray-100">
+</div>
+<!-- Add to cart button -->
+<button class=" border rounded-md py-1 px-2.5 hover:bg-gray-200">
+  <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+</button>
+</div>
+</div>
+<div class="border-b">
+    <nav class="max-w-6xl mx-auto flex gap-6 py-3">
+      <a href="index.html" class=" py-1.5 px-2 text-xs font-medium hover:bg-gray-200 rounded-md">All Gifts</a>
+      <a href="birthday.html" class=" bg-black py-1.5 px-2 text-xs font-medium hover:bg-gray-900 rounded-md active:bg-black text-white">Birthday</a>
+      <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Anniversary</a>
+      <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Holiday</a>
+      <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Personalized</a>
+      <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Jewelry</a>
+      <a href="#" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Home & Decor</a>
+    </nav>
+  </div>
+  </header>
+  <section class="bg-gray-100">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-8 py-16">
+      <div class="flex-1">
+        <h1 class="text-5xl font-medium mb-6">Find the Perfect Gift for Every Occasion</h1>
+        <p class="text-gray-600 mb-5">Discover unique and thoughtful gifts that will make your <br> loved ones smile. From personalized treasures to timeless<br> classics, we have something special for everyone.</p>
+        <div class="flex gap-4">
+          <button class="bg-black font-bold text-white text-xs rounded-md py-2.5 px-5">Shop Now</button>
+          <button class="bg-white font-bold text-xs rounded-md py-2.5 px-5 hover:bg-gray-200">Gift Guide</button>
+        </div> 
+      </div>
+      <div class="flex-1">
+        <img src="assets/images/gift-box-2.jpg" alt="Pink gift box" class="w-full rounded-lg shadow-lg">
+      </div>
+    </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-8 py-9">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-medium mb-7">Birthday Gifts</h2>
+        <span class="text-sm text-gray-500 mb-7">2 products</span>
+      </div>
+      <!--row 1-->
+      <!--Card 1-->
+      <div class="grid grid-cols-4 gap-6">
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/birthday-crown (2).jpg" alt="Birthday Crown">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Birthday Crown</p>
+            <p class="text-xs text-gray-500 mb-0.5">Sparkly birthday crown for special celebrations</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$19.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">birthday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+        <!--Card 2-->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/birthday-baloon-bouquet.avif" alt="Birthday Baloon Bouquet">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Birthday Baloon Bouquet</p>
+            <p class="text-xs text-gray-500 mb-0.5">Colorful helium balloon arrangement</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$16.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">birthday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>
+      </section>
+
+        <footer class="bg-gray-100  border-t">
+      <div class="max-w-6xl mx-auto px-8 py-9 grid grid-cols-4 gap-6">
+        <div>
+        <div class="flex items-center gap-2 mb-3 ">
+         <i data-lucide="gift" class="w-6 h-6"></i>
+         <span class="text-lg font-medium">GiftHub</span>
+         </div>
+        <p class="text-xs text-gray-500 mb-0.5">Your one-stop destination for thoughtful gifts that create lasting memories.</p>
+        </div>
+      
+        <div class="p-4">
+          <h3 class="font-medium text-sm mb-3">Quick Links</h3>
+          <p class="text-xs text-gray-500 mb-0.5">About UsGift GuideCustom OrdersTrack Order</p>
+        </div>
+
+        <div class="p-4">
+          <h3 class="font-medium text-sm mb-3">Customer Service</h3>
+          <p class="text-xs text-gray-500 mb-0.5">Shipping InfoReturns & ExchangesSize GuideFAQ</p>
+        </div>
+
+        <div class="p-4">
+          <h3 class="font-medium text-sm mb-3">Stay Updated</h3>
+          <p class="text-xs text-gray-500 mb-0.5">Get exclusive offers and gift ideas delivered to your inbox.</p>
+          <input type="email" placeholder="Email" class=" border-grey rounded-md bg-gray-100">
+        </div>
+      </div>
+      <div class="border-t">
+        <div class="max-w-6xl mx-auto px-8 py-9 flex justify-between items-center">
+          <div class="flex gap-7">
+          <p class="text-xs text-gray-500 mb-0.5">123 Gift Street, Present City</p>
+          <p class="text-xs text-gray-500 mb-0.5">(555) 123-GIFT</p>
+          <p class="text-xs text-gray-500 mb-0.5">hello@gifthub.com</p>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 mb-0.5">Made with ❤️ for gift lovers</p>
+          </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-8 py-9 text-center">
+          <p class="text-xs text-gray-500 mb-0.5">© 2025 GiftHub. All rights reserved.</p>         
+        </div>
+
+      </div>
+     </footer>
+     <script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
