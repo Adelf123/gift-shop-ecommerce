@@ -47,6 +47,7 @@ function addToCart(button) {
   }
 
   saveCart(cart);
+  renderCartPage();
   const label = button.querySelector("span");
   if (label) {
     const previousText = label.textContent;
@@ -67,31 +68,22 @@ function createCartButton(label, action, itemId) {
   return button;
 }
 
-function renderCartPage() {
-  const itemsContainer = document.querySelector("#cart-items");
-  if (!itemsContainer) return;
-
-  const cart = getCart();
-  const emptyState = document.querySelector("#cart-empty");
-  const footer = document.querySelector("#cart-footer");
-  const totalElement = document.querySelector("#cart-total");
-  const countBadge = document.querySelector("#cart-count-badge");
+function renderCartView(view, cart) {
   const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
-  itemsContainer.replaceChildren();
-  updateCartCount(cart);
-  if (countBadge) countBadge.textContent = `${itemCount} ${itemCount === 1 ? "item" : "items"}`;
-  if (emptyState) emptyState.classList.toggle("hidden", cart.length > 0);
-  if (footer) footer.classList.toggle("hidden", cart.length === 0);
+  view.itemsContainer.replaceChildren();
+  if (view.countBadge) view.countBadge.textContent = `${itemCount} ${itemCount === 1 ? "item" : "items"}`;
+  if (view.emptyState) view.emptyState.classList.toggle("hidden", cart.length > 0);
+  if (view.footer) view.footer.classList.toggle("hidden", cart.length === 0);
 
   cart.forEach((item) => {
     const row = document.createElement("article");
-    row.className = "flex gap-4 border-b border-gray-200 py-4";
+    row.className = "flex gap-3 border-b border-gray-200 py-4";
 
     const image = document.createElement("img");
     image.src = item.image;
     image.alt = item.name;
-    image.className = "h-20 w-20 rounded object-cover";
+    image.className = "h-16 w-16 shrink-0 rounded object-cover";
 
     const details = document.createElement("div");
     details.className = "min-w-0 flex-1";
@@ -118,13 +110,139 @@ function renderCartPage() {
 
     details.append(name, price, controls);
     row.append(image, details);
-    itemsContainer.append(row);
+    view.itemsContainer.append(row);
   });
 
-  if (totalElement) {
+  if (view.totalElement) {
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    totalElement.textContent = `$${total.toFixed(2)}`;
+    view.totalElement.textContent = `$${total.toFixed(2)}`;
   }
+}
+
+function getCartView(root, selectors) {
+  const itemsContainer = root.querySelector(selectors.items);
+  if (!itemsContainer) return null;
+
+  return {
+    itemsContainer,
+    emptyState: root.querySelector(selectors.empty),
+    footer: root.querySelector(selectors.footer),
+    totalElement: root.querySelector(selectors.total),
+    countBadge: root.querySelector(selectors.count),
+  };
+}
+
+function renderCartPage() {
+  const cart = getCart();
+  const views = [
+    getCartView(document, {
+      items: "#cart-items",
+      empty: "#cart-empty",
+      footer: "#cart-footer",
+      total: "#cart-total",
+      count: "#cart-count-badge",
+    }),
+    getCartView(document, {
+      items: "#cart-drawer-items",
+      empty: "#cart-drawer-empty",
+      footer: "#cart-drawer-footer",
+      total: "#cart-drawer-total",
+      count: "#cart-drawer-count",
+    }),
+  ];
+
+  updateCartCount(cart);
+  views.filter(Boolean).forEach((view) => renderCartView(view, cart));
+}
+
+function createCartDrawer() {
+  const cartLink = document.querySelector('a[href="cart.html"]');
+  if (!cartLink) return null;
+
+  const backdrop = document.createElement("button");
+  backdrop.type = "button";
+  backdrop.id = "cart-drawer-backdrop";
+  backdrop.className = "hidden fixed inset-0 z-[60] bg-black/40 opacity-0 transition-opacity duration-300";
+  backdrop.setAttribute("aria-label", "Close shopping cart");
+
+  const drawer = document.createElement("aside");
+  drawer.id = "cart-drawer";
+  drawer.className = "hidden fixed right-0 top-0 z-[61] flex h-full w-full translate-x-full flex-col bg-white shadow-2xl transition-transform duration-300 sm:w-1/2 lg:w-1/4";
+  drawer.setAttribute("role", "dialog");
+  drawer.setAttribute("aria-modal", "true");
+  drawer.setAttribute("aria-labelledby", "cart-drawer-title");
+  drawer.innerHTML = `
+    <header class="flex items-center justify-between border-b border-gray-200 px-5 py-4">
+      <div>
+        <h2 id="cart-drawer-title" class="text-base font-semibold">Shopping Cart</h2>
+        <span id="cart-drawer-count" class="text-xs text-gray-500">0 items</span>
+      </div>
+      <button type="button" data-cart-close aria-label="Close shopping cart" class="rounded p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900">
+        <i data-lucide="x" class="h-5 w-5"></i>
+      </button>
+    </header>
+    <div class="flex-1 overflow-y-auto px-5">
+      <div id="cart-drawer-empty" class="flex h-full flex-col items-center justify-center gap-3 text-center">
+        <p class="text-sm text-gray-500">Your cart is empty</p>
+        <button type="button" data-cart-close class="border border-gray-200 rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-50">Continue shopping</button>
+      </div>
+      <div id="cart-drawer-items"></div>
+    </div>
+    <footer id="cart-drawer-footer" class="hidden border-t border-gray-200 px-5 py-4">
+      <div class="mb-3 flex items-center justify-between">
+        <span class="text-sm font-semibold">Total</span>
+        <span id="cart-drawer-total" class="text-base font-bold">$0.00</span>
+      </div>
+      <a href="cart.html" class="block w-full rounded-md bg-gray-900 py-2.5 text-center text-sm font-semibold text-white hover:bg-gray-800">View full cart</a>
+    </footer>
+  `;
+
+  document.body.append(backdrop, drawer);
+  if (window.lucide) window.lucide.createIcons({ root: drawer });
+
+  let closeTimer;
+
+  function openDrawer() {
+    window.clearTimeout(closeTimer);
+    renderCartPage();
+    backdrop.classList.remove("hidden");
+    drawer.classList.remove("hidden");
+    requestAnimationFrame(() => {
+      backdrop.classList.remove("opacity-0");
+      backdrop.classList.add("opacity-100");
+      drawer.classList.remove("translate-x-full");
+      drawer.classList.add("translate-x-0");
+    });
+    document.body.classList.add("overflow-hidden");
+    drawer.querySelector("[data-cart-close]").focus();
+  }
+
+  function closeDrawer() {
+    backdrop.classList.add("opacity-0");
+    backdrop.classList.remove("opacity-100");
+    drawer.classList.add("translate-x-full");
+    drawer.classList.remove("translate-x-0");
+    document.body.classList.remove("overflow-hidden");
+    cartLink.focus();
+    closeTimer = window.setTimeout(() => {
+      backdrop.classList.add("hidden");
+      drawer.classList.add("hidden");
+    }, 300);
+  }
+
+  cartLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    openDrawer();
+  });
+  backdrop.addEventListener("click", closeDrawer);
+  drawer.addEventListener("click", (event) => {
+    if (event.target.closest("[data-cart-close]")) closeDrawer();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !drawer.classList.contains("hidden")) closeDrawer();
+  });
+
+  return { open: openDrawer, close: closeDrawer };
 }
 
 const searchInput = document.querySelector('input[placeholder="Search for gifts..."]');
@@ -157,6 +275,8 @@ if (searchInput && productGrid) {
     emptyMessage.classList.toggle("hidden", visibleCount > 0);
   });
 }
+
+createCartDrawer();
 
 document.addEventListener("click", (event) => {
   const button = event.target.closest("button");
