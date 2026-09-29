@@ -3,337 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GiftHub - Holiday Gifts</title>
-
+  <title>GiftHub</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
-
-<body class="bg-white text-black">
-
- 
-  <header class="border-b border-gray-200">
-
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-8">
-
-      <a href="birthday.html" class="flex items-center gap-3 text-2xl font-semibold">
-        <span class="text-3xl">🎁</span>
-        GiftHub
-      </a>
-
-      <div class="hidden md:flex items-center bg-gray-100 rounded-lg px-4 py-3 w-[470px]">
-
-        <span class="text-gray-500 mr-3">
-          ⌕
-        </span>
-
-        <input
-          type="text"
-          placeholder="Search for gifts..."
-          class="bg-transparent outline-none w-full text-sm"
-        >
-      </div>
-
-     
-      <button class="border border-gray-200 rounded-lg px-4 py-2 text-xl">
-        🛒
-      </button>
-
-    </div>
-
-    <nav class="border-t border-gray-200">
-
-      <div class="max-w-7xl mx-auto px-6 py-3 flex items-center gap-8 text-sm">
-
-        <a href="index.html" class="px-3 py-2">
-          All Gifts
-        </a>
-
-        <a href="birthday.html" class="px-3 py-2">
-          Birthday
-        </a>
-
-        <a href="anniversary.html" class="px-3 py-2">
-          Anniversary
-        </a>
-
-        <a
-          href="holiday.html"
-          class="bg-[#050314] text-white rounded-lg px-4 py-2 font-medium"
-        >
-          Holiday
-        </a>
-
-        <a href="personalized.html" class="px-3 py-2">
-          Personalized
-        </a>
-
-        <a href="jewelry.html" class="px-3 py-2">
-          Jewelry
-        </a>
-
-        <a href="homeanddecor.html" class="px-3 py-2">
-          Home & Decor
-        </a>
-
-      </div>
-
+<body class="pt-32">
+  <header class="fixed top-0 left-0 w-full bg-white z-50">
+    <div class="max-w-6xl mx-auto">
+   <!-- Row 1: logo, search bar, add to cart button-->
+    <div class="flex items-center justify-between py-4 border-b">
+      <!-- Logo -->
+        <div class="flex items-center gap-2">
+         <i data-lucide="gift" class="w-6 h-6"></i>
+         <span class="text-lg font-medium">GiftHub</span>
+        </div>
+        <!-- Search bar -->
+        <div class="flex-1 max-w-md mx-8 ">
+  <input type="text" placeholder="Search for gifts..." class="w-full px-4 py-2 border rounded-md bg-gray-100">
+</div>
+<!-- Add to cart button -->
+<button class=" border rounded-md py-1 px-2.5 hover:bg-gray-200">
+  <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+</button>
+</div>
+</div>
+<div class="border-b">
+    <nav class="max-w-6xl mx-auto flex gap-6 py-3">
+      <a href="index.html" class=" py-1.5 px-2 text-xs font-medium hover:bg-gray-200 rounded-md">All Gifts</a>
+      <a href="birthday.html" class="py-1.5 px-2 text-xs font-medium hover:bg-gray-200 rounded-md">Birthday</a>
+      <a href="anniversary.html" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Anniversary</a>
+      <a href="holiday.html" class="bg-black px-2 py-1.5 text-xs font-medium hover:bg-gray-900 rounded-md active:bg-black text-white">Holiday</a>
+      <a href="personalized.html" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Personalized</a>
+      <a href="jewelry.html" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Jewelry</a>
+      <a href="homeanddecor.html" class=" px-2 py-1.5 text-xs font-medium hover:bg-gray-200 rounded-md">Home & Decor</a>
     </nav>
-
+  </div>
   </header>
-
   <section class="bg-gray-100">
-
-    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-
-      <!-- Text -->
-      <div>
-
-        <h1 class="text-5xl md:text-6xl font-semibold leading-tight mb-6">
-          Find the Perfect Gift for Every Occasion
-        </h1>
-
-        <p class="text-gray-500 text-lg leading-8 max-w-2xl mb-7">
-          Discover unique and thoughtful gifts that will make your loved ones smile.
-          From personalized treasures to timeless classics, we have something special
-          for everyone.
-        </p>
-
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-8 py-16">
+      <div class="flex-1">
+        <h1 class="text-5xl font-medium mb-6">Find the Perfect Gift for Every Occasion</h1>
+        <p class="text-gray-600 mb-5">Discover unique and thoughtful gifts that will make your <br> loved ones smile. From personalized treasures to timeless<br> classics, we have something special for everyone.</p>
         <div class="flex gap-4">
+          <button class="bg-black font-bold text-white text-xs rounded-md py-2.5 px-5">Shop Now</button>
+          <button class="bg-white font-bold text-xs rounded-md py-2.5 px-5 hover:bg-gray-200">Gift Guide</button>
+        </div> 
+      </div>
+      <div class="flex-1">
+        <img src="assets/images/gift-box-2.jpg" alt="Pink gift box" class="w-full rounded-lg shadow-lg">
+      </div>
+    </div>
+    </section>
 
-          <button class="bg-[#050314] text-white px-7 py-3 rounded-lg font-semibold">
-            Shop Now
-          </button>
-
-          <button class="bg-white border border-gray-300 px-7 py-3 rounded-lg font-semibold">
-            Gift Guide
-          </button>
-
+    <section class="max-w-6xl mx-auto px-8 py-9">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-medium mb-7">Holiday Gifts</h2>
+        <span class="text-sm text-gray-500 mb-7">2 products</span>
+      </div>
+      <!--row 1-->
+      <!--Card 1-->
+      <div class="grid grid-cols-4 gap-6">
+      <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/holiday-ornament (1).jpg" alt="Holiday Ornament Set" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Holiday Ornament Set</p>
+            <p class="text-xs text-gray-500 mb-0.5">Beautiful handcrafted Christmas ornaments</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$24.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">holiday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
         </div>
+        </div>
+       
+        <!-- Card 2 -->
+        <div class="border rounded-lg overflow-hidden">
+          <img src="assets/images/cookie-cutters.jpg" alt="Holiday Cookie Cutters" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <p class=" text-sm font-medium mb-0.5">Holiday Cookie Cutters</p>
+            <p class="text-xs text-gray-500 mb-0.5">Festive cookie cutter set with recipes</p>
+            <div class="flex items-center mb-0.5">
+            <span class="text-yellow-500">★★★★</span>
+            <span class=" text-gray-200">★</span>
+            <span class="gap-1 text-xs">(4.8)</span>
+          </div>      
+            <div class="flex justify-between mb-9 ">
+            <h5 class="font-bold">$18.99</h5>
+            <p class="bg-gray-200 text-xs px-1.5 py-1 rounded-xl">holiday</p>
+          </div>
+          <button class="bg-black text-white w-full py-1 text-sm font-medium flex items-center justify-center gap-3 mb- rounded-md">
+            <i data-lucide="shopping-cart" class="w-3.5 h-5"></i>
+            <span> Add to cart </span>
+            </button>
+        </div>
+        </div>    
+        </div> 
+      </section>
 
-      </div>
-
-      <div>
-
-        <img
-          src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1000&q=80"
-          alt="Gift box"
-          class="w-full h-[330px] object-cover rounded-xl shadow-sm"
-        >
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <main class="max-w-7xl mx-auto px-6 py-14">
-
-    <div class="flex justify-between items-center mb-8">
-
-      <h2 class="text-2xl font-semibold">
-        Holiday Gifts
-      </h2>
-
-      <span class="text-gray-500">
-        2 products
-      </span>
-
-    </div>
-
-
-    <div class="grid md:grid-cols-2 gap-6 max-w-2xl">
-
-
-      <!-- PRODUCT 1 -->
-      <div class="border border-gray-200 rounded-2xl overflow-hidden">
-
-        <img
-          src="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?auto=format&fit=crop&w=800&q=80"
-          alt="Holiday ornaments"
-          class="w-full h-[200px] object-cover"
-        >
+        <footer class="bg-gray-100  border-t">
+      <div class="max-w-6xl mx-auto px-8 py-9 grid grid-cols-4 gap-6">
+        <div>
+        <div class="flex items-center gap-2 mb-3 ">
+         <i data-lucide="gift" class="w-6 h-6"></i>
+         <span class="text-lg font-medium">GiftHub</span>
+         </div>
+        <p class="text-xs text-gray-500 mb-0.5">Your one-stop destination for thoughtful gifts that create lasting memories.</p>
+        </div>
+      
+        <div class="p-4">
+          <h3 class="font-medium text-sm mb-3">Quick Links</h3>
+          <p class="text-xs text-gray-500 mb-0.5">About UsGift GuideCustom OrdersTrack Order</p>
+        </div>
 
         <div class="p-4">
-
-          <h3 class="text-lg font-semibold mb-2">
-            Holiday Ornament Set
-          </h3>
-
-          <p class="text-gray-500 text-sm mb-3">
-            Beautiful handcrafted Christmas ornaments
-          </p>
-
-          <div class="flex items-center gap-2 mb-3">
-
-            <span class="text-yellow-400 text-lg">
-              ★★★★☆
-            </span>
-
-            <span class="text-sm text-gray-500">
-              (4.6)
-            </span>
-
-          </div>
-
-
-          <div class="flex justify-between items-center mb-8">
-
-            <span class="text-xl font-semibold">
-              $24.99
-            </span>
-
-            <span class="bg-gray-100 px-3 py-1 rounded-lg text-xs font-medium">
-              holiday
-            </span>
-
-          </div>
-
-
-          <button class="w-full bg-[#050314] text-white py-3 rounded-lg font-semibold">
-            🛒 &nbsp; Add to Cart
-          </button>
-
+          <h3 class="font-medium text-sm mb-3">Customer Service</h3>
+          <p class="text-xs text-gray-500 mb-0.5">Shipping InfoReturns & ExchangesSize GuideFAQ</p>
         </div>
-
-      </div>
-
-
-     
-      <div class="border border-gray-200 rounded-2xl overflow-hidden">
-
-        <img
-          src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80"
-          alt="Holiday cookies"
-          class="w-full h-[200px] object-cover"
-        >
 
         <div class="p-4">
-
-          <h3 class="text-lg font-semibold mb-2">
-            Holiday Cookie Cutters
-          </h3>
-
-          <p class="text-gray-500 text-sm mb-3">
-            Festive cookie cutter set with recipes
-          </p>
-
-          <div class="flex items-center gap-2 mb-3">
-
-            <span class="text-yellow-400 text-lg">
-              ★★★★☆
-            </span>
-
-            <span class="text-sm text-gray-500">
-              (4.5)
-            </span>
-
+          <h3 class="font-medium text-sm mb-3">Stay Updated</h3>
+          <p class="text-xs text-gray-500 mb-0.5">Get exclusive offers and gift ideas delivered to your inbox.</p>
+          <input type="email" placeholder="Email" class=" border-grey rounded-md bg-gray-100">
+        </div>
+      </div>
+      <div class="border-t">
+        <div class="max-w-6xl mx-auto px-8 py-9 flex justify-between items-center">
+          <div class="flex gap-7">
+          <p class="text-xs text-gray-500 mb-0.5">123 Gift Street, Present City</p>
+          <p class="text-xs text-gray-500 mb-0.5">(555) 123-GIFT</p>
+          <p class="text-xs text-gray-500 mb-0.5">hello@gifthub.com</p>
           </div>
-
-
-          <div class="flex justify-between items-center mb-8">
-
-            <span class="text-xl font-semibold">
-              $18.99
-            </span>
-
-            <span class="bg-gray-100 px-3 py-1 rounded-lg text-xs font-medium">
-              holiday
-            </span>
-
+          <div>
+            <p class="text-xs text-gray-500 mb-0.5">Made with ❤️ for gift lovers</p>
           </div>
-
-
-          <button class="w-full bg-[#050314] text-white py-3 rounded-lg font-semibold">
-            🛒 &nbsp; Add to Cart
-          </button>
-
+        </div>
+        <div class="max-w-6xl mx-auto px-8 py-9 text-center">
+          <p class="text-xs text-gray-500 mb-0.5">© 2025 GiftHub. All rights reserved.</p>         
         </div>
 
       </div>
-
-    </div>
-
-  </main>
-
-
-  <footer class="border-t border-gray-200 bg-gray-50">
-
-    <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
-
-      <!-- Brand -->
-      <div>
-
-        <div class="flex items-center gap-2 text-xl font-semibold mb-5">
-          🎁 GiftHub
-        </div>
-
-        <p class="text-gray-500 leading-6 text-sm">
-          Your one-stop destination for thoughtful gifts that create lasting memories.
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <h3 class="font-semibold mb-5">
-          Quick Links
-        </h3>
-
-        <div class="space-y-3 text-sm text-gray-500">
-          <p>About Us</p>
-          <p>Gift Guide</p>
-          <p>Custom Orders</p>
-          <p>Track Order</p>
-        </div>
-
-      </div>
-
-      <div>
-
-        <h3 class="font-semibold mb-5">
-          Customer Service
-        </h3>
-
-        <div class="space-y-3 text-sm text-gray-500">
-          <p>Shipping Info</p>
-          <p>Returns & Exchanges</p>
-          <p>Size Guide</p>
-          <p>FAQ</p>
-        </div>
-
-      </div>
-
-      <div>
-
-        <h3 class="font-semibold mb-5">
-          Stay Updated
-        </h3>
-
-        <p class="text-gray-500 text-sm leading-6 mb-4">
-          Get exclusive offers and gift ideas delivered to your inbox.
-        </p>
-
-        <div class="flex">
-
-          <input
-            type="email"
-            placeholder="Enter your email"
-            class="bg-white border border-gray-200 px-4 py-3 rounded-l-lg w-full outline-none text-sm"
-          >
-
-          <button class="bg-[#050314] text-white px-5 rounded-r-lg font-semibold text-sm">
-            Subscribe
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </footer>
-
+     </footer>
+     <script>
+  lucide.createIcons();
+</script>
 </body>
 </html>
